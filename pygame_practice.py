@@ -16,6 +16,11 @@ pygame.display.set_caption('Runner')
 #create a clock to control frame rate
 clock = pygame.time.Clock()
 
+# this is a surface to go on the display surface. Takes a tuple
+sky_surface = pygame.image.load('graphics/sky.png')
+ground_surface = pygame.image.load('graphics/ground.png')
+
+
 #this loop is always true so it must be broken from the inside
 #the entire game runs in this. It is what keeps the screen created
 #above from just disappearing imediately.
@@ -29,6 +34,10 @@ while True:
             # exit closes the code running the while loop
             exit()
     #draw and update all elements here
+            
+    #now draw the surface on the display surface 
+    screen.blit(sky_surface, (0,0))
+    screen.blit(ground_surface, (0,300))
 
     #this updates the display surface each time the code reads it
     pygame.display.update()
